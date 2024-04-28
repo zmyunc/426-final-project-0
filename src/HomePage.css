@@ -1,0 +1,17 @@
+/* HomePage.css */
+
+.product-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .product-image {
+    width: 150px; /* or any size that fits your design */
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px; /* optional for rounded corners */
+  }
+  
+  /* ... rest of your styles */
+  
