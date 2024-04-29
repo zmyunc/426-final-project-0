@@ -129,6 +129,7 @@ app.post('/products', upload, (req, res) => {
     imageUrl = '/images/' + req.file.filename;
   }
 
+  
   const newProduct = {
     id: newId,
     name,
