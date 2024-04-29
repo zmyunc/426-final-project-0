@@ -1,0 +1,117 @@
+/* StockPage.css */
+
+/* Container for the entire page */
+.stock-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background */
+  }
+  
+  /* Styling for stock items */
+  .stock-item {
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 15px;
+    margin-bottom: 15px; /* Space between stock items */
+    background-color: #fff; /* White background */
+    display: flex;
+    justify-content: space-between; /* Distribute space between stock details and actions */
+  }
+  
+  .stock-item-details {
+    display: flex;
+    align-items: center;
+  }
+  .top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between buttons if needed */
+    margin-bottom: 20px; /* Space before the next section */
+}
+  .stock-image {
+    width: 100px; /* Fixed width, adjust as needed */
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .stock-item h3 {
+    margin: 0;
+  }
+  
+  /* Buttons styling */
+  .stock-button {
+    padding: 5px 10px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .stock-button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+  }
+  
+  .stock-button:disabled {
+    background-color: #cccccc; /* Grey out disabled button */
+  }
+  
+  /* Form styling */
+  .stock-form {
+    margin-top: 20px;
+  }
+  
+  .stock-form input,
+  .stock-form button {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  /* Utility classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Layout adjustments */
+  .flex-container {
+    display: flex;
+    justify-content: space-between; /* Or center for horizontal centering */
+    align-items: center; /* Vertical centering */
+  }
+  
+  .flex-column {
+    flex-direction: column;
+  }
+  
+  /* Adjust the path of the images if needed */
+  .stock-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Navigation bar at the top */
+  .navbar {
+    background-color: #007bff; /* Adjust color as needed */
+    color: white;
+    padding: 10px 20px;
+
+  }
+  
+  .navbar a {
+    color: white;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Weather display */
+  .weather-container {
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    color: white;
+    background-color: #007bff;
+    border-radius: 3px;
+  }
+  

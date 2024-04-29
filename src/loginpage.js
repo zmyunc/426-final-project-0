@@ -47,7 +47,8 @@ function LoginPage({ setIsLogged }) {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h1 className="login-title">Login Page</h1>
+        <h1 className="login-title">Welcome to MR. Supermarket Management Systems</h1>
+     
         <button ref={loginButtonRef} className="login-button">Login</button>
       </div>
       <div className="weather-display">

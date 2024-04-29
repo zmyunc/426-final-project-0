@@ -56,10 +56,13 @@ const USER_ID = 'specific-user-id'; // The ID for your single user
 const SECRET_KEY = 'your-secret-key'; // A key known only to your server
 
 let products = [
-  { id: 1, name: "Apple", price: 10, imageUrl: "/images/apple.jpg", description: "Fresh apples from organic farms." },
+  { id: 1, name: "Apple", price: 1, imageUrl: "/images/apple.jpg", description: "Fresh apples from organic farms." },
   { id: 2, name: "Bread", price: 2, imageUrl: "/images/bread.jpg", description: "Whole wheat bread, freshly baked every morning." },
-  { id: 3, name: "Carrot", price: 3, imageUrl: "/images/carrot.jpg", description: "Crunchy carrots perfect for a healthy diet." }
+  { id: 3, name: "Carrot", price: 3, imageUrl: "/images/carrot.jpg", description: "Crunchy carrots perfect for a healthy diet." },
+  { id: 4, name: "Banana", price: 4, imageUrl: "/images/banana.jpg", description: "Rich in potassium and natural sugars for energy." },
+  { id: 5, name: "Tomato", price: 5, imageUrl: "/images/tomato.jpg", description: "Juicy tomatoes, ripe and ready for your salads." }
 ];
+
 
 function getNextId() {
   const sortedIds = products.map(product => product.id).sort((a, b) => a - b);
@@ -165,7 +168,12 @@ app.delete('/products/:id', (req, res) => {
 let employees = [
   // This would start as an empty array, but for example:
   { id: 1, firstName: "John", lastName: "Doe" },
-  { id: 2, firstName: "Jane", lastName: "Smith" }
+  { id: 2, firstName: "Jane", lastName: "Smith" },
+  { id: 3, firstName: "Alice", lastName: "Johnson" },
+  { id: 4, firstName: "James", lastName: "Brown" },
+  { id: 5, firstName: "Linda", lastName: "Davis" },
+  { id: 6, firstName: "Robert", lastName: "Miller" },
+  { id: 7, firstName: "Patricia", lastName: "Wilson" },
   // ... other employees
 ];
 

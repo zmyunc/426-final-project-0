@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Hook for navigation
 import Weather from './Weather'; // Import the Weather component
+import './StockPage.css'; // Ensure the path to your CSS file is correct
+
 
 
 function StockPage({ isLogged, setIsLogged }) {
@@ -14,12 +16,24 @@ function StockPage({ isLogged, setIsLogged }) {
 const handleImageChange = (e) => {
   setSelectedImage(e.target.files[0]);
 };
-    const handleLogout = () => {
-        // Perform the logout operation
-        localStorage.removeItem('token'); // Or however you manage your auth tokens
-        setIsLogged(false); // Update the login state
-        navigate('/login'); // Redirect to the login page
-      };
+const handleLogout = async () => {
+  // Assuming you have an endpoint to clear the session
+  try {
+    const response = await fetch('http://localhost:5000/logout', {
+      method: 'POST',
+      credentials: 'include', // Needed for cookies if you're using them
+    });
+    if (response.ok) {
+      // Update the state and redirect to login
+      setIsLogged(false);
+      navigate('/login');
+    } else {
+      console.error('Logout failed');
+    }
+  } catch (error) {
+    console.error('There was an error logging out', error);
+  }
+};
 
     const handleGoHome = () => {
         navigate('/chooseuser'); // Navigate to the homepage
@@ -85,7 +99,14 @@ const handleImageChange = (e) => {
                 break;
 
 
+                
             case 'update':
+              let idNum = Number(currentProduct.id);
+              if (idNum <= 0) {
+                alert('ID must be greater than 0.');
+                return;
+              }
+
                 fetch(`http://localhost:5000/products/${currentProduct.id}`, {
                     method: 'PUT',
                     headers: {
@@ -99,7 +120,10 @@ const handleImageChange = (e) => {
                     setCurrentProduct({ id: '', name: '', price: '' });
                     setActionType('');
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                  console.error('Error updating product:', error);
+                  alert('Failed to update product. ID not found.');
+                });
                 break;
 
 
@@ -154,6 +178,10 @@ const handleAddProduct = (e) => {
         e.preventDefault();
         const productId = currentProduct.id;
     
+        if (productId < 0) {
+          alert('Price must be greater than or equal to 0.');
+          return;
+        }
         fetch(`http://localhost:5000/products/${productId}`, {
           method: 'DELETE',
         })
@@ -165,7 +193,8 @@ const handleAddProduct = (e) => {
           }
         })
         .catch(error => {
-          console.error('Error:', error);
+          console.error('Error updating product:', error);
+          alert('Failed to update product. ID not found.');
         });
       };
 
@@ -176,18 +205,21 @@ const handleAddProduct = (e) => {
 
       
     return (
-        <div>
-            <h1>Stock Management</h1>
-            <Weather cityId="4460162" /> 
-            <button onClick={handleLogout}>Logout</button>
-      <button onClick={handleGoHome}>Go back to menu</button>
-            <div>
+      <div className="stock-container">
+      <h1 className="text-center">Stock Management</h1>
+      
+      
+            <div className="top-buttons">
+                <button onClick={handleLogout} className="logout-button">Logout</button>
+                <button onClick={handleGoHome} className="home-button">Go back to menu</button>
+            </div>
+            <div className="top-buttons">
                 <button onClick={() => setActionType('add')}>Add Item</button>
                 <button onClick={() => setActionType('update')}>Update Item</button>
                 <button onClick={() => setActionType('delete')}>Delete Item</button>
             </div>
 
-
+            <div className="employee-box">
             {actionType === 'add' && (
         <form onSubmit={handleAddProduct}>
         <label>
@@ -211,6 +243,7 @@ const handleAddProduct = (e) => {
           />
         </label>
         <label>
+          
         Image:
             <input
             type="file"
@@ -273,9 +306,9 @@ const handleAddProduct = (e) => {
           <button type="submit">Delete Item</button>
         </form>
       )}
-
-            <h2>Product List</h2>
-            <table>
+ </div>
+<h2 className="text-center">Item List</h2>
+<table className="product-table">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -293,6 +326,9 @@ const handleAddProduct = (e) => {
                     ))}
                 </tbody>
             </table>
+            <div className='weather-display '>
+    <Weather cityId="4460162" /> 
+  </div>
         </div>
     );
 }

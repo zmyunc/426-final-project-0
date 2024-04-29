@@ -1,0 +1,90 @@
+/* EmployeePage.css */
+
+.employee-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Center the container */
+    font-family: Arial, sans-serif; /* Standard font */
+}
+
+.employee-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.employee-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.employee-button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.employee-button:hover {
+    background-color: #0056b3;
+}
+
+.employee-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.employee-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Remove double border */
+    background-color: #f8f8f8;
+}
+
+.employee-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px; /* Fixed width for forms */
+    margin: 0 auto; /* Center the form */
+}
+
+.employee-form input[type="text"],
+.employee-form input[type="number"],
+.employee-form button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.employee-form button {
+    background-color: #28a745;
+    color: white;
+}
+
+.employee-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between buttons if needed */
+    margin-bottom: 20px; /* Space before the next section */
+}
+
+/* You can add more styling based on your preference */
+.weather-container {
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    color: white;
+    background-color: #007bff;
+    border-radius: 3px;
+  }
+  

@@ -45,10 +45,10 @@ const ChooseUser = ({ setIsLogged }) => {
  return (
     <div className="choose-container">
         <div className="choose-box">
-            <h1 className="choose-title">Choose Page</h1>
-            <button className="button" onClick={goToHome}>Go to Home</button>
-            <button className="button" onClick={goToStock}>Go to Stock Management</button>
-            <button className="button" onClick={goToEmployeePage}>Employee Page</button>
+            <h1 className="choose-title">Operating Menu</h1>
+            <button className="button" onClick={goToHome}>View MR. Supermarket</button>
+            <button className="button" onClick={goToStock}> Management of stocks</button>
+            <button className="button" onClick={goToEmployeePage}>Management Employees</button>
             <button className="button" onClick={handleLogout}>Logout</button>
         </div>
         <div className="weather-display">

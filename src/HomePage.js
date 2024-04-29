@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Weather from './Weather'; // Import the Weather component
 import './HomePage.css'; // Adjust the path if necessary
-
+import checkSession from './App'
 
 function HomePage({ setIsLogged }) {
   const navigate = useNavigate();
@@ -25,10 +25,23 @@ function HomePage({ setIsLogged }) {
       .catch(error => console.error('Error fetching products:', error));
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    setIsLogged(false);
-    navigate("/login");
+  const handleLogout = async () => {
+    // Assuming you have an endpoint to clear the session
+    try {
+      const response = await fetch('http://localhost:5000/logout', {
+        method: 'POST',
+        credentials: 'include', // Needed for cookies if you're using them
+      });
+      if (response.ok) {
+        // Update the state and redirect to login
+        setIsLogged(false);
+        navigate('/login');
+      } else {
+        console.error('Logout failed');
+      }
+    } catch (error) {
+      console.error('There was an error logging out', error);
+    }
   };
 
   const addToCart = (product) => {
@@ -79,35 +92,33 @@ function HomePage({ setIsLogged }) {
 
 
   return (
-    <div>
-       <h1>Products</h1>
-       <Weather cityId="4460162" /> 
+    <div className="home-container">
 
-      <button onClick={handleLogout}>Logout</button>
-      <button onClick={goToStockPage}>Go back to user choose</button>
+<div className="header-container">
+      <h1>MR. Supermarket</h1>
+    </div>
+  
 
-
-      {products.map(product => (
-  <div key={product.id} className="product-container">
-    <img src={product.imageUrl} alt={product.name} className="product-image" />
-    <h3><Link to={`/productdetail/${product.id}`}>{product.name}</Link> - ${typeof product.price === 'number' ? product.price.toFixed(2) : '0.00'}</h3>
-    <button onClick={() => addToCart(product)}>Add to Cart</button>
-    <button onClick={() => removeOneFromCart(product.id)} disabled={!cart.some(item => item.id === product.id)}>Remove One</button>
-  </div>
-))}
+    <div className="nav-menu">
       
-      {/* <h2>Products</h2>
-      <div>
-        {products.map(product => (
-          <div key={product.id}>
-            <h3>{product.name} - ${product.price.toFixed(2)}</h3>
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
-            <button onClick={() => removeOneFromCart(product.id)} disabled={!cart.some(item => item.id === product.id)}>Remove One</button>
+      <button onClick={handleLogout}>Logout</button>
+      <button onClick={goToStockPage}>Go back to the menu</button>
+    </div>
 
-          </div>
-        ))} */}
 
+      <div className="products-section">
+      {products.map(product => (
+        <div key={product.id} className="product-container">
+          <img src={product.imageUrl} alt={product.name} className="product-image" />
+          <h3><Link to={`/productdetail/${product.id}`}>{product.name}</Link> - ${product.price.toFixed(2)}</h3>
+          <button onClick={() => addToCart(product)}>Add to Cart</button>
+          <button onClick={() => removeOneFromCart(product.id)} disabled={!cart.some(item => item.id === product.id)}>Remove One</button>
+        </div>
+      ))}
+    </div>
+    <div className="cart-container">
       <h2>Cart</h2>
+      </div>
       <table>
         <thead>
           <tr>
@@ -141,7 +152,9 @@ function HomePage({ setIsLogged }) {
           </tr>
         </tfoot>
       </table>
+   
     </div>
+    
   );
 }
 

@@ -39,22 +39,62 @@ function App() {
   }
 
   const ProtectedRoute = ({ children }) => {
-    return isLogged ? children : <Navigate to="/login" replace />;
+    if (!isLogged) {
+      // Redirect them to the /login page, but save the current location they were
+      // trying to go to when they were redirected. This allows us to send them
+      // along to that page after they log in, which is a nicer user experience
+      // than dropping them off on the home page.
+      console.log(isLogged);
+      return <Navigate to="/login" replace />;
+    }
+
+    return children;
   };
 
   return (
     <Router>
       <Routes>
-        
-      <Route path="/" element={isLogged ? <HomePage setIsLogged={setIsLogged} /> : <Navigate to="/login" />} />
-      <Route path="/productdetail/:id" element={<ProductPage />} /> {/* Updated route */}
-
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <HomePage setIsLogged={setIsLogged} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/productdetail/:id"
+          element={
+            <ProtectedRoute>
+              <ProductPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/login" element={<LoginPage setIsLogged={setIsLogged} />} />
-        <Route path="/chooseuser" element={isLogged ? <ChooseUser setIsLogged={setIsLogged} /> : <Navigate to="/login" />} />
-        <Route path="/employees" element={<EmployeePage setIsLogged={setIsLogged}/>} /> {/* New Route */}
-
-
-        <Route path="/stock" element={isLogged ? <StockPage setIsLogged={setIsLogged} /> : <Navigate to="/login" />} />
+        <Route
+          path="/chooseuser"
+          element={
+            <ProtectedRoute>
+              <ChooseUser setIsLogged={setIsLogged} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/employees"
+          element={
+            <ProtectedRoute>
+              <EmployeePage setIsLogged={setIsLogged} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/stock"
+          element={
+            <ProtectedRoute>
+              <StockPage setIsLogged={setIsLogged} />
+            </ProtectedRoute>
+          }
+        />
         {/* ... other routes */}
       </Routes>
     </Router>

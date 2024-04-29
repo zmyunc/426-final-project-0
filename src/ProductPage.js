@@ -31,7 +31,7 @@ function ProductPage() {
             <div className="product-info">
                 <h1 className="product-title">{product.name}</h1>
                 <p className="product-price">Price: ${product.price.toFixed(2)}</p>
-                <p className="product-description">{product.description}</p>
+               <p className="product-description">{product.description}</p>
             </div>
         </div>
     );

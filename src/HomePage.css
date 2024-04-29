@@ -1,17 +1,195 @@
 /* HomePage.css */
 
+.home-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
 .product-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .product-image {
-    width: 150px; /* or any size that fits your design */
-    height: auto;
-    margin-right: 15px;
-    border-radius: 5px; /* optional for rounded corners */
-  }
-  
-  /* ... rest of your styles */
-  
+  border: 1px solid #ddd; /* Light grey border */
+  padding: 15px;
+  margin-bottom: 15px; /* Space between product listings */
+  background-color: #fff; /* White background */
+  width: calc(20% - 30px); /* New: Adjust the width (20% for five in a row) and subtract margins */
+  margin: 15px; /* New: Add some margin to each side */
+  box-sizing: border-box; /* New */
+  text-align: center; /* New */
+}
+
+.product-image {
+  max-width: 100%; /* make sure the image is responsive and fits the container */
+  height: auto;
+  display: block; /* makes sure the image doesn't have extra space below */
+  margin: 0 auto 10px; /* centers the image and adds some space below */
+}
+
+.product-container h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem; /* Adjust the font size as necessary */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto; /* Center table */
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tfoot th {
+  text-align: right;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+}
+
+.weather-display {
+  text-align: center;
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.top-buttons button {
+  margin: 0 10px; /* Space between buttons */
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* HomePage.css */
+
+.home-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  background-color: #007bff; /* Adjust color as needed */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.header-container h1 {
+  color: white;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.nav-menu button {
+  margin-left: 10px;
+}
+
+.product-container {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-container h3 {
+  text-align: center;
+  margin: 0;
+}
+
+.cart-container {
+  background-color: #007bff; /* Adjust color as needed */
+  padding: 10px;
+  margin: 20px auto; /* Top & bottom margins 20px, left & right auto centers it */
+  color: white;
+  text-align: center;
+  max-width: 450px; /* Or any max-width you prefer */
+  display: block; /* Ensures it behaves as a block-level element */
+}
+
+
+.cart-table {
+  margin: 20px auto;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+.cart-table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.cart-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.cart-table th, .cart-table td {
+  text-align: left;
+}
+
+.cart-table tfoot th {
+  text-align: right;
+}
+
+.weather-container {
+  text-align: center;
+  padding: 5px;
+  margin-top: 20px;
+  color: white;
+  background-color: #007bff;
+  border-radius: 3px;
+}
+
+/* Other styles remain the same */
