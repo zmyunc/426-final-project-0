@@ -1,5 +1,5 @@
 <h1>This is a simple supermarket management system </h1>
-presentation video:
+presentation video: https://youtu.be/GgvInbkZ2BI
 
 1. On the very first page there is a login to authenticate your information.
 Once the user is logged in it will be in persistent-session state. Refreshing the page and closing the page does not cause the current page to be lost, nor does it cause the information to be lost.
@@ -74,4 +74,4 @@ Login by using cookies session-persistent
 Good design throughout the program
 
 10 points: Quality of presentation video <br>
-video link:
+video link:https://youtu.be/GgvInbkZ2BI
