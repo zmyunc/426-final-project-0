@@ -239,6 +239,7 @@ function EmployeePage({ setIsLogged }) {
 
 
   return (
+    <div className="container">
     <div className="employee-container">
         <h1 className="employee-title">Employee Page</h1>
         <div className="top-buttons">
@@ -262,7 +263,7 @@ function EmployeePage({ setIsLogged }) {
         <div className='weather-display '>
     <Weather cityId="4460162" /> 
   </div>
-    </div>
+    </div></div>
 );
 }
 

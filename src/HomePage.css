@@ -3,11 +3,14 @@
 .home-container {
   padding: 20px;
   background-color: #f9f9f9;
-  background-image: url('./background.jpg'); /* If the image is in the public directory */
+  background-image: url('./background.jpg'); /* If the image is in the same directory as your CSS */
   background-size: cover; /* Cover the entire space */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
+  background-attachment: fixed; /* Fix the background image during scrolling */
 }
+
+
 
 .product-container {
   border: 1px solid #ddd; /* Light grey border */
