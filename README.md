@@ -6,9 +6,9 @@ For example, if we want to go to localhost3000:/ without logging in,
 the user will be forced to go back to localhost3000:/login.
 
 2. Basic Management System Menu
-1) View current store page
-2) Goods management
-3）Employee Management
+1) View current web page of the store
+2) Stocks management
+3) Employees Management
 4) Logout
 
 *Except for viewing the current store page, users will see a current weather information of Chapel Hill at the bottom of the page.
