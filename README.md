@@ -60,6 +60,9 @@ The front end are all base on interactive and event-driven.
 
 30 points: Having a back end that serves at least two resources with a RESTful CRUD (create, read, update, and delete) API.<br>
 Stocks management and Employees Management satisfy this requirement.
+Each of these takes create, read, update, and delete
+So this section takes at least 8 APIs.
+
 
 10 points: Uses at least one 3rd party API. <br>
 The weather on the page uses a 3rd API, which displays the current temperature in Chapel Hill.
