@@ -51,3 +51,22 @@ ID must be greater than 0 and ID must be an already existing ID Otherwise an err
 -Delete Employee
 The user only needs to enter the ID to delete the employee.
 The ID must be an existing ID or an error will be reported.
+
+30 points: Having a front end that is interactive and event-driven:
+
+The front end are all base on interactive and event-driven.
+
+30 points: Having a back end that serves at least two resources with a RESTful CRUD (create, read, update, and delete) API.
+Stocks management and Employees Management satisfy this requirement.
+
+10 points: Uses at least one 3rd party API|
+The weather on the page uses a 3rd API, which displays the current temperature in Chapel Hill.
+
+10 points: Uses session-persistent state in some way.
+Login by using cookies session-persistent 
+
+10 points: A pleasing user experience (i.e., easy to use, good design, etc.).
+Good design throughout the program
+
+10 points: Quality of presentation video
+video link:
