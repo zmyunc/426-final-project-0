@@ -90,6 +90,7 @@ app.post('/login', (req, res) => {
       return res.status(401).json({ message: 'Unauthorized' });
   }
 });
+
 app.get('/check-session', (req, res) => {
   if (req.cookies.user_id === USER_ID) {
       return res.status(200).json({ message: 'Session active' });
@@ -102,6 +103,8 @@ app.post('/logout', (req, res) => {
   res.clearCookie('user_id');
   return res.status(200).json({ message: 'Logged out' });
 });
+
+
 //////////////////add 21:06
 // READ - Get all products
 app.get('/products', (req, res) => {
