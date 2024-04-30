@@ -2,6 +2,7 @@
 1. On the very first page there is a login to authenticate your information.
 Once the user is logged in it will be in persistent-session state. Refreshing the page and closing the page does not cause the current page to be lost, nor does it cause the information to be lost.
 If the user is not logged in, the user cannot access other pages of the site by typing the url.
+
 For example, if we want to go to localhost3000:/ without logging in,
 the user will be forced to go back to localhost3000:/login.
 
