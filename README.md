@@ -1,4 +1,5 @@
 <h1>This is a simple supermarket management system </h1>
+<href src =" "presentation video >
 1. On the very first page there is a login to authenticate your information.
 Once the user is logged in it will be in persistent-session state. Refreshing the page and closing the page does not cause the current page to be lost, nor does it cause the information to be lost.
 If the user is not logged in, the user cannot access other pages of the site by typing the url.
