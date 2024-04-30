@@ -205,7 +205,9 @@ const handleAddProduct = (e) => {
 
       
     return (
+      <div className="container">
       <div className="stock-container">
+       
       <h1 className="text-center">Stock Management</h1>
       
       
@@ -328,6 +330,7 @@ const handleAddProduct = (e) => {
             </table>
             <div className='weather-display '>
     <Weather cityId="4460162" /> 
+  </div>
   </div>
         </div>
     );

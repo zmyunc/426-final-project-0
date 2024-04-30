@@ -43,17 +43,19 @@ const ChooseUser = ({ setIsLogged }) => {
   };
 
  return (
+  <div className="container">
     <div className="choose-container">
         <div className="choose-box">
             <h1 className="choose-title">Operating Menu</h1>
             <button className="button" onClick={goToHome}>View MR. Supermarket</button>
-            <button className="button" onClick={goToStock}> Management of stocks</button>
-            <button className="button" onClick={goToEmployeePage}>Management Employees</button>
+            <button className="button" onClick={goToStock}> Stocks Management</button>
+            <button className="button" onClick={goToEmployeePage}> Employees Management</button>
             <button className="button" onClick={handleLogout}>Logout</button>
         </div>
         <div className="weather-display">
             <Weather cityId="4460162" className="weather-display" />
         </div>
+    </div>
     </div>
 );
 };

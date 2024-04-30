@@ -1,5 +1,15 @@
 /* EmployeePage.css */
 
+  #root {
+    padding: 20px;
+    background-color: #f9f9f9;
+    background-image: url('./background.jpg'); /* If the image is in the public directory */
+    background-size: cover; /* Cover the entire space */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    min-height: 1250px;
+
+  }
 .employee-container {
     padding: 20px;
     max-width: 800px;
