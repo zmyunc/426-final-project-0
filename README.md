@@ -54,21 +54,21 @@ The ID must be an existing ID or an error will be reported.
 
 
 <h2>Project content corresponds to final project scores </h2>
-30 points: Having a front end that is interactive and event-driven:
+30 points: Having a front end that is interactive and event-driven:<br>
 
 The front end are all base on interactive and event-driven.
 
 30 points: Having a back end that serves at least two resources with a RESTful CRUD (create, read, update, and delete) API.<br>
 Stocks management and Employees Management satisfy this requirement.
 
-10 points: Uses at least one 3rd party API|
+10 points: Uses at least one 3rd party API. <br>
 The weather on the page uses a 3rd API, which displays the current temperature in Chapel Hill.
 
-10 points: Uses session-persistent state in some way.
+10 points: Uses session-persistent state in some way.<br>
 Login by using cookies session-persistent 
 
-10 points: A pleasing user experience (i.e., easy to use, good design, etc.).
+10 points: A pleasing user experience (i.e., easy to use, good design, etc.). <br>
 Good design throughout the program
 
-10 points: Quality of presentation video
+10 points: Quality of presentation video <br>
 video link:
