@@ -14,7 +14,7 @@ the user will be forced to go back to localhost3000:/login.
 
 *Except for viewing the current store page, users will see a current weather information of Chapel Hill at the bottom of the page.
 
-Extension 1) View current store page
+<h3>Extension 1- View current store page</h3>
 There are basic shopping functions here
 Guests can add items to their shopping cart by clicking the add/remove button
 
@@ -27,7 +27,7 @@ The shopping cart calculates the price of all items.
 At the end of the cart there is a check out button to finalize the customer's order.
 Once the order is confirmed, the cart will be emptied.
 
-Extension 2) For more information about goods management:
+<h3>Extension 2- For more information about goods management:</h3>
 Includes the following three functions
 -Add item
 The user must enter the name, price, and picture of the item.
@@ -40,7 +40,7 @@ Price must be greater than 0 or an error will be reported
 The user only needs to enter the ID to delete the item.
 ID must be an existing ID or an error will be reported.
 
-Extension 3) More information about employee management:
+<h3>Extension 3- More information about employee management:</h3>
 -Add Employee
 User has to enter the first and last name of the employee
 -Update Employee
