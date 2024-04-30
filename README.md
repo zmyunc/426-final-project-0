@@ -58,7 +58,7 @@ The ID must be an existing ID or an error will be reported.
 
 The front end are all base on interactive and event-driven.
 
-30 points: Having a back end that serves at least two resources with a RESTful CRUD (create, read, update, and delete) API.
+30 points: Having a back end that serves at least two resources with a RESTful CRUD (create, read, update, and delete) API.<br>
 Stocks management and Employees Management satisfy this requirement.
 
 10 points: Uses at least one 3rd party API|
