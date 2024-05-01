@@ -3,8 +3,9 @@ presentation video: https://youtu.be/GgvInbkZ2BI
 
 1. On the very first page there is a login to authenticate your information.
 Once the user is logged in it will be in persistent-session state. Refreshing the page and closing the page does not cause the current page to be lost, nor does it cause the information to be lost.
-If the user is not logged in, the user cannot access other pages of the site by typing the url.
 
+<h3>About the protection effect when the user is not logged in</h3>
+If the user is not logged in, the user cannot access other pages of the site by typing the url.
 For example, if we want to go to localhost3000:/ without logging in,
 the user will be forced to go back to localhost3000:/login.
 
@@ -57,18 +58,23 @@ The ID must be an existing ID or an error will be reported.
 30 points: Having a front end that is interactive and event-driven:<br>
 
 The front end are all base on interactive and event-driven.
+Check each page to see it.
 
 30 points: Having a back end that serves at least two resources with a RESTful CRUD (create, read, update, and delete) API.<br>
 Stocks management and Employees Management satisfy this requirement.
 Each of these takes create, read, update, and delete
 So this section takes at least 8 APIs.
 
+(There are more than just the eight 8 APIs in server.js.
+We also have other APIs that implement different functionality
+For example, when a user logs in, our front-end will request the back-end to send a cookie to verify the user's)
+
 
 10 points: Uses at least one 3rd party API. <br>
 The weather on the page uses a 3rd API, which displays the current temperature in Chapel Hill.
 
 10 points: Uses session-persistent state in some way.<br>
-Login by using cookies session-persistent 
+Login by using cookies session-persistent. 
 
 10 points: A pleasing user experience (i.e., easy to use, good design, etc.). <br>
 Good design throughout the program
